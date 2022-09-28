@@ -20,7 +20,7 @@ trait ModuleTrait
         if (in_array($module, $this->expectedModules())) {
             return false;
         }
-        $namespace = 'App\\' . $module;
+        $namespace = 'App\\Models\\' . $module;
         $this->model = new $namespace;
     }
 

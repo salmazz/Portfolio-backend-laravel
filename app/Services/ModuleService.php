@@ -2,11 +2,10 @@
 
 namespace App\Services;
 
-use App\Contact;
 use App\Traits\ModuleTrait;
 use App\Traits\ResponseTrait;
 
-class moduleService{
+class ModuleService{
 
     use ResponseTrait, ModuleTrait;
 

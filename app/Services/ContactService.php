@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Contact;
 use App\Traits\ResponseTrait;
 
-class contactService
+class ContactService
 {
     use ResponseTrait;
 
