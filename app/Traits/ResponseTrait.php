@@ -20,12 +20,13 @@ trait ResponseTrait
         return $this->res([], false, $e);
     }
 
-    protected function res($data = [], $status = true, $message= '')
+    protected function res($data = [], $status = true, $message= '', $code = '')
     {
         $data = [
             'payload' => $data,
             'status' => $status,
-            'message' => $message
+            'message' => $message,
+            'code'    => $code
         ];
         return response()->json($data);
     }

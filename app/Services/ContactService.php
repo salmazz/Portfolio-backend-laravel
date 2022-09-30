@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App\Contact;
+use App\Helpers\HttpStatus;
+use App\Models\Contact;
 use App\Traits\ResponseTrait;
 
 class ContactService
@@ -19,9 +20,9 @@ class ContactService
         ]);
 
         if ($v->fails()) {
-            return $this->res($v->errors(), false, 'we got an error');
+            return $this->res($v->errors(), false, 'we got an error',HttpStatus::HTTP_ERROR);
         }
         Contact::create($request->all());
-        return $this->res([], true, 'thanks for sent your message we will be in touch soon');
+        return $this->res([], true, 'thanks for sent your message we will be in touch soon', HttpStatus::HTTP_OK);
     }
 }

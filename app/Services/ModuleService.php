@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Helpers\HttpStatus;
 use App\Traits\ModuleTrait;
 use App\Traits\ResponseTrait;
 
@@ -38,7 +39,7 @@ class ModuleService{
             if($data){
                 return $this->successWithData($data);
             }
-            return $this->res([],false,'you cant find this id');
+            return $this->res([],false,'you cant find this id', HttpStatus::HTTP_NOT_FOUND);
         }catch (\Exception $e){
             return $this->errorResponse($e->getMessage());
         }
